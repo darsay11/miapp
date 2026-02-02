@@ -3,7 +3,7 @@ import { useState } from 'react';
 import TaskCard from '../components/TaskCard';
 
 export default function Tasks() {
-  const [tasks, setTasks] = useState([
+  const [tasks] = useState([
     { id: '1', title: 'Diseñar mockups', description: 'Crear diseños en Figma', priority: 'high' as const, status: 'in_progress' as const },
     { id: '2', title: 'Revisar código', description: 'Code review del PR #123', priority: 'medium' as const, status: 'pending' as const },
     { id: '3', title: 'Escribir documentación', description: 'Documentar la API', priority: 'low' as const, status: 'pending' as const },

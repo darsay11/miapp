@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { checkHealth } from '../services/api';
 
 export default function Dashboard() {
-  const [stats, setStats] = useState({
+  const [stats] = useState({
     totalTasks: 12,
     completedTasks: 5,
     pendingTasks: 7,
