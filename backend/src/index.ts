@@ -44,7 +44,8 @@ app.get('/api/health', (req, res) => {
   res.json({ 
     status: 'Backend is running! 🚀',
     timestamp: new Date().toISOString(),
-    environment: process.env.NODE_ENV || 'development'
+    environment: process.env.NODE_ENV || 'development',
+    frontendUrl: process.env.FRONTEND_URL || 'not set'
   });
 });
 
