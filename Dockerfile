@@ -7,7 +7,7 @@ COPY backend/package*.json ./backend/
 
 # Instalar dependencias
 WORKDIR /app/backend
-RUN npm ci
+RUN npm install
 
 # Copiar código fuente
 COPY backend/src ./src
