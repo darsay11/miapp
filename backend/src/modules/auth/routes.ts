@@ -51,7 +51,7 @@ router.get('/google/callback',
       };
       
       // Redirigir al frontend con el token y datos del usuario
-      const callbackUrl = `${process.env.FRONTEND_URL || 'http://localhost:3000'}/auth/callback?token=${token}&user=${encodeURIComponent(JSON.stringify(userData))}`;
+      const callbackUrl = `${process.env.FRONTEND_URL || 'https://miapp-front.up.railway.app'}/auth/callback?token=${token}&user=${encodeURIComponent(JSON.stringify(userData))}`;
       
       console.log('✅ OAuth callback exitoso para:', user.displayName);
       console.log('📍 Redirigiendo a:', callbackUrl);
@@ -59,7 +59,7 @@ router.get('/google/callback',
       res.redirect(callbackUrl);
     } catch (error) {
       console.error('❌ Error en OAuth callback:', error);
-      res.redirect(`${process.env.FRONTEND_URL || 'http://localhost:3000'}/auth/login?error=callback_error`);
+      res.redirect(`${process.env.FRONTEND_URL || 'https://miapp-front.up.railway.app'}/auth/login?error=callback_error`);
     }
   }
 );
