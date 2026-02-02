@@ -1,0 +1,65 @@
+🚀 CONFIGURACIÓN RÁPIDA DE GOOGLE OAUTH (5 minutos)
+================================================================
+
+❌ ERROR ACTUAL: "invalid_client" 
+✅ SOLUCIÓN: Configurar credenciales reales de Google
+
+PASOS:
+
+1️⃣ ABRE EN TU NAVEGADOR:
+   https://console.cloud.google.com/apis/credentials
+
+2️⃣ CREAR CREDENCIALES:
+   - Clic en "+ CREATE CREDENTIALS"
+   - Selecciona "OAuth client ID"
+   
+   Si es primera vez:
+   - Configure Consent Screen → External → Continue
+   - App name: MiApp
+   - User support email: tu email
+   - Developer email: tu email
+   - Save and Continue (3 veces)
+
+3️⃣ CONFIGURAR OAUTH CLIENT:
+   - Application type: Web application
+   - Name: MiApp Local
+   
+   ⚠️ IMPORTANTE - Authorized redirect URIs:
+   http://localhost:5000/api/auth/google/callback
+   
+   - Clic en CREATE
+
+4️⃣ COPIAR CREDENCIALES:
+   Verás una ventana con:
+   - Client ID: algo como "123456-abc.apps.googleusercontent.com"
+   - Client Secret: algo como "GOCSPX-abc123"
+   
+   ⚠️ COPIA ESTOS DOS VALORES
+
+5️⃣ PEGAR EN backend/.env:
+   Abre: backend/.env
+   
+   Reemplaza:
+   GOOGLE_CLIENT_ID=TU_CLIENT_ID_REAL_AQUI.apps.googleusercontent.com
+   GOOGLE_CLIENT_SECRET=TU_CLIENT_SECRET_REAL_AQUI
+   
+   Con tus valores copiados (sin comillas)
+
+6️⃣ REINICIAR BACKEND:
+   En la terminal:
+   - Detén el servidor (Ctrl+C)
+   - Ejecuta: npm run dev
+   
+7️⃣ PROBAR:
+   - Ve a: http://localhost:3001
+   - Clic en "Continuar con Google"
+   - ¡Debería funcionar! ✅
+
+================================================================
+
+💡 Si el error persiste:
+- Verifica que copiaste bien el Client ID (termina en .apps.googleusercontent.com)
+- Verifica que el redirect URI es exactamente: http://localhost:5000/api/auth/google/callback
+- Reinicia el backend después de editar .env
+
+📖 Documentación completa: docs/GOOGLE_AUTH_SETUP.md

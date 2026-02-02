@@ -1,0 +1,17 @@
+{
+  "name": "miespacio",
+  "version": "1.0.0",
+  "description": "MiEspacio - App de Productividad y Gestión de Proyectos",
+  "private": true,
+  "scripts": {
+    "install-all": "npm install --workspaces",
+    "backend": "npm --prefix backend run dev",
+    "frontend": "npm --prefix frontend run dev",
+    "build": "npm --workspaces run build"
+  },
+  "devDependencies": {
+    "@types/express-session": "^1.18.2",
+    "@types/passport": "^1.0.17",
+    "@types/passport-google-oauth20": "^2.0.17"
+  }
+}
